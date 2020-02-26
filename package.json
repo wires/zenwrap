@@ -1,0 +1,16 @@
+{
+  "name": "zenwrap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "zenwork.js",
+  "scripts": {
+    "test": "node ./test/example.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "promise-worker": "^2.0.1",
+    "zenroom": "^1.0.4"
+  }
+}
