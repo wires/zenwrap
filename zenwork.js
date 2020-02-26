@@ -27,7 +27,8 @@ if (isMainThread) {
     const silent = require('./silence.js');
     const { script, keys, data, opts } = workerData;
     let run = () => zenwrap(script, keys, data, opts)
-    silent(run)
-        .then(x => parentPort.postMessage({ result: x }))
+    let beSilent = !(opts && opts.verbose > 0)
+    let P = (beSilent ? silent(run) : run())
+    P.then(x => parentPort.postMessage({ result: x }))
         .catch(err => parentPort.postMessage({ error: err }))
 }

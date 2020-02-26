@@ -9,7 +9,7 @@ print(s)
 `.trim()
 
 async function generateRandom(seed) {
-    let opts = {rngseed: seed}
+    let opts = {rngseed: seed, verbose: 1}
     let trace = await zenwork(script, null, null, opts)
     return trace[0].json.random
 }
