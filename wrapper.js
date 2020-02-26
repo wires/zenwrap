@@ -13,8 +13,6 @@ function constructConfigString(options) {
 }
 
 // print output can be be doubled :O
-let isDoubledJSONObject = /^\{[":\w\s]*\}\s*\{[":\w\s]*\}$/gm
-
 let undouble = text => `${text.split('}{')[0]}\}`
 
 module.exports = function zenroomP (script, keys, data, opts_) {
@@ -33,7 +31,7 @@ module.exports = function zenroomP (script, keys, data, opts_) {
         let trace = []
         let printFunction = text => {
             try {
-                if (isDoubledJSONObject.test(text)) {
+                if (text.indexOf('}{') !== -1) {
                     let first = undouble(text)
                     let json = JSON.parse(first)
                     log('PRINT_DOUBLEJSON', json)
