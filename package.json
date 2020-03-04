@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "promise-worker": "^2.0.1",
-    "zenroom": "^1.0.4"
+    "zenroom": "^1.0.5"
   }
 }
